@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <title>MISS MARY SUNSHINE</title>
     <style>
-        /* Global Styles */
         body {
             font-family: 'Courier New', Courier, monospace; /* typewriter font */
-            font-size: 11pt;                                 /* small size */
-            text-align: left;                                /* flush left */
-            margin: 20px;                                    /* padding from edge */
+            font-size: 11pt;
+            text-align: left;
+            margin: 20px;
             line-height: 1.4;
-            background-color: #fff;                          /* white background */
-            color: #000;                                     /* black text */
+            background-color: #fff;
+            color: #000;
         }
 
         h1 {
@@ -20,43 +19,74 @@
             margin-bottom: 20px;
         }
 
-        /* Note container */
-        .note {
+        .post {
             border-bottom: 1px solid #ccc;
             padding: 10px 0;
         }
 
-        /* Optional: remove list styles if you want notes as bullet points */
-        ul {
-            list-style: none;
-            padding-left: 0;
+        .date {
+            text-decoration: underline;
+            margin-bottom: 5px;
         }
 
-        /* Optional: small spacing for multiple notes */
-        .note p {
-            margin: 0;
+        .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .content {
+            margin-bottom: 5px;
+            white-space: pre-line; /* preserves line breaks */
         }
     </style>
 </head>
 <body>
     <h1>MISS MARY SUNSHINE</h1>
 
-    <div class="note">
-        <p>First note — write whatever you like here.</p>
-    </div>
+    <div id="posts"></div>
 
-    <div class="note">
-        <p>Second note — add as many as you want.</p>
-    </div>
+    <script>
+        // Function to format date like "25 September 2025 00:00:00"
+        function formatDate(date) {
+            const options = { day: '2-digit', month: 'long', year: 'numeric' };
+            const datePart = date.toLocaleDateString('en-GB', options);
+            const timePart = date.toTimeString().split(' ')[0]; // HH:MM:SS
+            return `${datePart} ${timePart}`;
+        }
 
-    <div class="note">
-        <p>Third note — continuous scroll style like DivaCorp.net.</p>
-    </div>
+        // First post
+        const postsData = [
+            {
+                title: "get mad",
+                content: "Get mad\nLet the world hassle you\nGet mad"
+            }
+        ];
 
-    <!-- Add more notes here -->
-    <div class="note">
-        <p>Another note for continuous scrolling effect.</p>
-    </div>
+        const postsContainer = document.getElementById('posts');
 
+        postsData.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.className = 'post';
+
+            const dateDiv = document.createElement('div');
+            dateDiv.className = 'date';
+            dateDiv.textContent = formatDate(new Date()); // automatically set current date/time
+
+            const titleDiv = document.createElement('div');
+            titleDiv.className = 'title';
+            titleDiv.textContent = post.title;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'content';
+            contentDiv.textContent = post.content;
+
+            postDiv.appendChild(dateDiv);
+            postDiv.appendChild(titleDiv);
+            postDiv.appendChild(contentDiv);
+
+            postsContainer.appendChild(postDiv);
+        });
+    </script>
 </body>
 </html>
+
