@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <title>MISS MARY SUNSHINE</title>
     <style>
+        /* Load Dom Casual locally */
+        @font-face {
+            font-family: 'Dom Casual';
+            src: url('DomCasual.ttf') format('truetype'); /* make sure the font file is in the same folder as index.html */
+        }
+
         body {
-            font-family: "Courier New", Courier, monospace; /* typewriter font */
-            font-size: 11pt; /* small size */
-            text-align: left;   /* flush left */
-            margin-left: 20px;  /* padding from the edge */
-            line-height: 1.4;   /* optional spacing between lines */
+            font-family: 'Dom Casual', sans-serif; /* fallback to sans-serif if font doesn't load */
+            font-size: 11pt;     /* your requested font size */
+            text-align: left;    /* flush left */
+            margin-left: 20px;   /* padding from browser edge */
+            line-height: 1.4;    /* optional spacing between lines */
         }
 
         h1 {
-            font-size: 11pt;    /* slightly bigger for header */
+            font-size: 14pt;     /* slightly larger for header */
             margin-bottom: 10px;
         }
 
@@ -39,4 +45,3 @@
     </div>
 </body>
 </html>
-
