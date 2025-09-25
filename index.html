@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>MISS MARY SUNSHINE</title>
     <style>
-        /* Load Dom Casual locally */
-        @font-face {
-            font-family: 'Dom Casual';
-            src: url('DomCasual.ttf') format('truetype'); /* make sure the font file is in the same folder as index.html */
-        }
-
+        /* Global Styles */
         body {
-            font-family: 'Dom Casual', sans-serif; /* fallback to sans-serif if font doesn't load */
-            font-size: 11pt;     /* your requested font size */
-            text-align: left;    /* flush left */
-            margin-left: 20px;   /* padding from browser edge */
-            line-height: 1.4;    /* optional spacing between lines */
+            font-family: 'Courier New', Courier, monospace; /* typewriter font */
+            font-size: 11pt;                                 /* small size */
+            text-align: left;                                /* flush left */
+            margin: 20px;                                    /* padding from edge */
+            line-height: 1.4;
+            background-color: #fff;                          /* white background */
+            color: #000;                                     /* black text */
         }
 
         h1 {
-            font-size: 14pt;     /* slightly larger for header */
-            margin-bottom: 10px;
+            font-size: 14pt;
+            margin-bottom: 20px;
         }
 
+        /* Note container */
         .note {
             border-bottom: 1px solid #ccc;
-            padding: 5px 0;
+            padding: 10px 0;
+        }
+
+        /* Optional: remove list styles if you want notes as bullet points */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /* Optional: small spacing for multiple notes */
+        .note p {
+            margin: 0;
         }
     </style>
 </head>
@@ -33,15 +42,21 @@
     <h1>MISS MARY SUNSHINE</h1>
 
     <div class="note">
-        <p>My first note</p>
+        <p>First note — write whatever you like here.</p>
     </div>
 
     <div class="note">
-        <p>Another note</p>
+        <p>Second note — add as many as you want.</p>
     </div>
 
     <div class="note">
-        <p>More notes go here</p>
+        <p>Third note — continuous scroll style like DivaCorp.net.</p>
     </div>
+
+    <!-- Add more notes here -->
+    <div class="note">
+        <p>Another note for continuous scrolling effect.</p>
+    </div>
+
 </body>
 </html>
