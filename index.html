@@ -8,15 +8,43 @@
             font-family: 'Courier New', Courier, monospace;
             font-size: 11pt;
             text-align: left;
-            margin: 20px;
+            margin: 0;
             line-height: 1.4;
             background-color: #fff;
             color: #000;
         }
 
-        h1 {
-            font-size: 11pt;
-            margin-bottom: 20px;
+        /* Repeating header banner */
+        .header-banner {
+            white-space: nowrap;
+            overflow: hidden;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            margin-bottom: 30px; /* space below the banner */
+        }
+
+        .header-banner span {
+            display: inline-block;
+            padding-right: 50px; /* space between repetitions */
+            font-weight: bold;
+        }
+
+        /* Scroll animation for banner */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .scrolling-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 20s linear infinite;
+        }
+
+        /* Posts container */
+        #posts-container {
+            padding: 0 20px 20px 20px;
         }
 
         .post {
@@ -41,7 +69,9 @@
     </style>
 </head>
 <body>
-   <div class="header-banner">
+
+    <!-- Repeating scrolling banner -->
+    <div class="header-banner">
         <div class="scrolling-text">
             <span>MISS MARY SUNSHINE</span>
             <span>MISS MARY SUNSHINE</span>
@@ -51,26 +81,14 @@
             <span>MISS MARY SUNSHINE</span>
             <span>MISS MARY SUNSHINE</span>
             <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
         </div>
     </div>
 
-<div class="post">
-    <div class="date"> 26 September 2025 20:48:55</div>
-    <div class="title">Your Post Title</div>
-    <div class="content">
-Your post text goes here.
-
-    </div>
-</div>
-    
+    <!-- Posts container -->
     <div id="posts-container">
+        <!-- Newest post at the top -->
         <div class="post">
-            <div class="date">25 September 2025 11:18:07</div>
+            <div class="date">25 September 2025 20:22:15</div>
             <div class="title">Get Mad</div>
             <div class="content">
 
@@ -79,7 +97,8 @@ Let the world hassle you
             </div>
         </div>
 
-    
+     
     </div>
+
 </body>
 </html>
