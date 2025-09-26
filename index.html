@@ -14,7 +14,7 @@
             color: #000;
         }
 
-        /* Repeating header banner */
+        /* Static repeating header banner */
         .header-banner {
             white-space: nowrap;
             overflow: hidden;
@@ -28,18 +28,6 @@
             display: inline-block;
             padding-right: 50px; /* space between repetitions */
             font-weight: bold;
-        }
-
-        /* Scroll animation for banner */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .scrolling-text {
-            display: inline-block;
-            white-space: nowrap;
-            animation: scroll 20s linear infinite;
         }
 
         /* Posts container */
@@ -70,34 +58,37 @@
 </head>
 <body>
 
-    <!-- Repeating scrolling banner -->
+    <!-- Static repeating banner -->
     <div class="header-banner">
-        <div class="scrolling-text">
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-            <span>MISS MARY SUNSHINE</span>
-        </div>
+        <span>MISS MARY SUNSHINE</span>
+        <span>MISS MARY SUNSHINE</span>
+        <span>MISS MARY SUNSHINE</span>
+        <span>MISS MARY SUNSHINE</span>
+        <span>MISS MARY SUNSHINE</span>
     </div>
 
     <!-- Posts container -->
     <div id="posts-container">
         <!-- Newest post at the top -->
         <div class="post">
-            <div class="date">25 September 2025 20:22:15</div>
-            <div class="title">Get Mad</div>
+            <div class="date">25 September 2025 00:00:00</div>
+            <div class="title">get mad</div>
             <div class="content">
-
+Get mad
 Let the world hassle you
-
+Get mad
             </div>
         </div>
 
-     
+        <div class="post">
+            <div class="date">24 September 2025 18:30:00</div>
+            <div class="title">Another Post</div>
+            <div class="content">
+This is another post
+With multiple lines
+Date is preserved
+            </div>
+        </div>
     </div>
 
 </body>
