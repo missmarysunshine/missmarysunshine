@@ -5,7 +5,7 @@
     <title>MISS MARY SUNSHINE</title>
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace; /* typewriter font */
+            font-family: 'Courier New', Courier, monospace;
             font-size: 11pt;
             text-align: left;
             margin: 20px;
@@ -44,51 +44,26 @@
     <h1>MISS MARY SUNSHINE</h1>
 
     <div id="posts-container">
-        <!-- Add your posts here -->
-        <div class="post" data-title="get mad" data-content="Get mad
+        <!-- Newest posts at the top -->
+        <div class="post">
+            <div class="date">25 September 2025 00:00:00</div>
+            <div class="title">get mad</div>
+            <div class="content">
+Get mad
 Let the world hassle you
-Get mad"></div>
+Get mad
+            </div>
+        </div>
 
-        <div class="post" data-title="Another Post" data-content="This is another post
+        <div class="post">
+            <div class="date">24 September 2025 18:30:00</div>
+            <div class="title">Another Post</div>
+            <div class="content">
+This is another post
 With multiple lines
-It will automatically show the current date/time"></div>
+Date is preserved
+            </div>
+        </div>
     </div>
-
-    <script>
-        // Format date like "25 September 2025 00:00:00"
-        function formatDate(date) {
-            const options = { day: '2-digit', month: 'long', year: 'numeric' };
-            const datePart = date.toLocaleDateString('en-GB', options);
-            const timePart = date.toTimeString().split(' ')[0]; // HH:MM:SS
-            return `${datePart} ${timePart}`;
-        }
-
-        const container = document.getElementById('posts-container');
-
-        // Get all posts
-        document.querySelectorAll('.post').forEach(post => {
-            const title = post.getAttribute('data-title');
-            const content = post.getAttribute('data-content');
-
-            const dateDiv = document.createElement('div');
-            dateDiv.className = 'date';
-            dateDiv.textContent = formatDate(new Date());
-
-            const titleDiv = document.createElement('div');
-            titleDiv.className = 'title';
-            titleDiv.textContent = title;
-
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'content';
-            contentDiv.textContent = content;
-
-            post.appendChild(dateDiv);
-            post.appendChild(titleDiv);
-            post.appendChild(contentDiv);
-
-            // Add post to the **top** of the container
-            container.insertBefore(post, container.firstChild);
-        });
-    </script>
 </body>
 </html>
